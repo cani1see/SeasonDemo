@@ -11,10 +11,14 @@ import LinearGradient from 'react-native-linear-gradient';
 import React, {useState} from 'react';
 import {icon_down, icon_filter} from '../constants/icons';
 import {mainList} from '../constants/fake_data';
+import {DefaultNavigationProps, ListItem} from '../types';
+import {useNavigation} from '@react-navigation/native';
 
 const DRESSES = ['Dress', 'Pants', 'Blazers', 'Jackets'];
 
 const COLUMN_ITEM_WIDTH = (Dimensions.get('window').width - 20 * 2 - 25) / 2;
+
+type Props = DefaultNavigationProps<'HomeScreen'>;
 
 const HomeListHeader = () => {
   const [selectedTab, setSelectedTab] = useState(0);
@@ -60,9 +64,11 @@ const HomeListHeader = () => {
   );
 };
 
-export const HomeScreen = ({navigation}) => {
-  const toDetail = params => navigation.navigate('DetailScreen', params);
-  const _renderItem = ({item}) => {
+export const HomeScreen = () => {
+  const navigation = useNavigation();
+  const toDetail = (params: ListItem) =>
+    navigation.navigate('DetailScreen', params);
+  const _renderItem = ({item}: {item: ListItem}) => {
     return (
       <TouchableOpacity
         onPress={() => toDetail(item)}

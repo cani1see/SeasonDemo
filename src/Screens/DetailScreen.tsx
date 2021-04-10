@@ -1,8 +1,11 @@
 import {Text, View, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import React from 'react';
 import Color from 'color';
+import {DefaultNavigationProps} from '../types';
 
-export const DetailScreen = ({route, navigation}) => {
+type Props = DefaultNavigationProps<'DetailScreen'>;
+
+export const DetailScreen = ({route}: Props) => {
   const item = route.params;
   const {tintColor} = item;
   const lighterColor = Color(tintColor).lighten(0.04).hex();

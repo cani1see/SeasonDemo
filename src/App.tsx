@@ -18,8 +18,9 @@ import {
   icon_search,
 } from './constants/icons';
 import {img_logo} from './constants/images';
+import {RootStackParamList} from './types';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<RootStackParamList>();
 
 const App = () => {
   return (
@@ -28,7 +29,7 @@ const App = () => {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
-            name="Home"
+            name="HomeScreen"
             component={HomeScreen}
             options={{
               title: 'seasons',

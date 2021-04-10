@@ -1,6 +1,7 @@
 import {img_item_harbour, img_item_victoria, img_item_zara} from './images';
+import {ListItem} from '../types';
 
-export const mainList = [
+export const mainList: ListItem[] = [
   {
     id: 1,
     title: 'Fit and Flare',
