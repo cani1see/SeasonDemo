@@ -35,7 +35,7 @@ const App = () => {
               title: 'seasons',
               headerTitleAlign: 'center',
               headerTitle: () => (
-                <View style={{width: 100, height: 40, backgroundColor: 'cyan'}}>
+                <View style={{width: 100, height: 40}}>
                   <Image source={img_logo} style={{width: 100, height: 40}} />
                 </View>
               ),
